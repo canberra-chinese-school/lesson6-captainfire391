@@ -8,15 +8,27 @@
 # make the whole process into a function, and call this function 5 times (to ask 5 different random addition maths questions)
 
 # Current program:
+right
+# make the whole process into a function, and call this function 5 times (to ask 5 different random addition maths questions)
+
+# Current program:
 import random
 
-number1 = random.randint(1, 10)
-number2 = random.randint(1, 10)
-number_sum = number1 + number2
-user_input = input("What's " + str(number1) + "+" + str(number2) + "?")
 
+def ask_question():
+    number1 = random.randint(1, 10)
+    number2 = random.randint(1, 10)
+    number_sum = number1 + number2
+    user_input = input("What's " + str(number1) + "+" + str(number2) + "?")
 
-if (int(user_input) == number_sum):
+    while int(user_input) != number_sum:
+        user_input = input("Incorrect! What's " + str(number1) + "+" + str(number2) + "?")
+
+    
     print("Correct!")
+
+
+for i in range(5):
+    ask_question()
 
 
